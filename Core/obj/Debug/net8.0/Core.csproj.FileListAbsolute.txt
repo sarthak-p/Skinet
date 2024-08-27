@@ -1,0 +1,11 @@
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/bin/Debug/net8.0/Core.deps.json
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/bin/Debug/net8.0/Core.dll
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/bin/Debug/net8.0/Core.pdb
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/Core.AssemblyInfoInputs.cache
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/Core.AssemblyInfo.cs
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/Core.csproj.CoreCompileInputs.cache
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/Core.dll
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/refint/Core.dll
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/Core.pdb
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Core/obj/Debug/net8.0/ref/Core.dll

@@ -13,3 +13,4 @@
 /Users/sarthak-p/Desktop/Personal Projects/skinet/Infrastructure/obj/Debug/net8.0/refint/Infrastructure.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/Infrastructure/obj/Debug/net8.0/Infrastructure.pdb
 /Users/sarthak-p/Desktop/Personal Projects/skinet/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll
+/Users/sarthak-p/Desktop/Personal Projects/skinet/Infrastructure/obj/Debug/net8.0/Infrastructure.sourcelink.json

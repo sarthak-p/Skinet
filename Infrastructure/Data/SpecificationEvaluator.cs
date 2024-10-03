@@ -21,6 +21,10 @@ public class SpecificationEvaluator<T> where T : BaseEntity
             query = query.OrderByDescending(spec.OrderByDescending);
         }
 
+        if (spec.isDistinct) {
+            query = query.Distinct();
+        }
+
         return query;
     }
     public static IQueryable<TResult> GetQuery<TSpec, TResult>(IQueryable<T> query, 
@@ -45,6 +49,10 @@ public class SpecificationEvaluator<T> where T : BaseEntity
 
         if (spec.Select != null) {
             selectQuery = query.Select(spec.Select);
+        }
+
+        if (spec.isDistinct) {
+            selectQuery = selectQuery?.Distinct();
         }
 
         return selectQuery ?? query.Cast<TResult>();

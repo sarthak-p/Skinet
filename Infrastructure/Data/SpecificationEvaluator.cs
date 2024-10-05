@@ -13,21 +13,29 @@ public class SpecificationEvaluator<T> where T : BaseEntity
             query = query.Where(spec.Criteria); // p => p.Brand == brand
         }
 
-        if (spec.OrderBy != null) {
+        if (spec.OrderBy != null)
+        {
             query = query.OrderBy(spec.OrderBy);
         }
 
-        if (spec.OrderByDescending != null) {
+        if (spec.OrderByDescending != null)
+        {
             query = query.OrderByDescending(spec.OrderByDescending);
         }
 
-        if (spec.isDistinct) {
+        if (spec.isDistinct)
+        {
             query = query.Distinct();
+        }
+
+        if (spec.isPagingEnabled)
+        {
+            query = query.Skip(spec.Skip).Take(spec.Take);
         }
 
         return query;
     }
-    public static IQueryable<TResult> GetQuery<TSpec, TResult>(IQueryable<T> query, 
+    public static IQueryable<TResult> GetQuery<TSpec, TResult>(IQueryable<T> query,
         ISpecification<T, TResult> spec)
     {
         if (spec.Criteria != null)
@@ -45,14 +53,21 @@ public class SpecificationEvaluator<T> where T : BaseEntity
             query = query.OrderByDescending(spec.OrderByDescending);
         }
 
-        var selectQuery = query as IQueryable<TResult>; 
+        var selectQuery = query as IQueryable<TResult>;
 
-        if (spec.Select != null) {
+        if (spec.Select != null)
+        {
             selectQuery = query.Select(spec.Select);
         }
 
-        if (spec.isDistinct) {
+        if (spec.isDistinct)
+        {
             selectQuery = selectQuery?.Distinct();
+        }
+
+        if (spec.isPagingEnabled)
+        {
+            selectQuery = selectQuery?.Skip(spec.Skip).Take(spec.Take);
         }
 
         return selectQuery ?? query.Cast<TResult>();

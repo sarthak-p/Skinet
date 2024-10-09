@@ -1,4 +1,5 @@
 using System;
+using API.RequestHelpers;
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
@@ -6,7 +7,7 @@ using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Controllers; 
+namespace API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -15,13 +16,17 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
 
     [HttpGet]
     public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts(
-        [FromQuery]ProductSpecParams specParams)
+        [FromQuery] ProductSpecParams specParams)
     {
         var spec = new ProductSpecification(specParams);
 
         var products = await repo.ListAsync(spec);
+        var count = await repo.CountAsync(spec);
 
-        return Ok(products);
+        var pagination = new Pagination<Product>(specParams.PageIndex,
+            specParams.PageSize, count, products);
+
+        return Ok(pagination);
     }
 
     [HttpGet("{id:int}")] // api/products/2
@@ -31,7 +36,7 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
 
         if (product == null) return NotFound();
 
-        return product; 
+        return product;
     }
 
     [HttpPost]
@@ -39,23 +44,23 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
     {
         repo.Add(product);
 
-        if (await repo.SaveAllAsync()) 
+        if (await repo.SaveAllAsync())
         {
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
 
-        return BadRequest("Problem creating product"); 
+        return BadRequest("Problem creating product");
     }
 
     [HttpPut("{id:int}")]
     public async Task<ActionResult> UpdateProduct(int id, Product product)
     {
-        if (product.Id != id || !ProductExists(id)) 
-            return BadRequest("Cannot update this product");    
+        if (product.Id != id || !ProductExists(id))
+            return BadRequest("Cannot update this product");
 
         repo.Update(product);
 
-        if (await repo.SaveAllAsync()) 
+        if (await repo.SaveAllAsync())
         {
             return NoContent();
         }
@@ -84,7 +89,7 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
     public async Task<ActionResult<IReadOnlyList<string>>> GetBrands()
     {
         var spec = new BrandListSpecification();
-    
+
         return Ok(await repo.ListAsync(spec));
     }
 
@@ -92,7 +97,7 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
     public async Task<ActionResult<IReadOnlyList<string>>> GetTypes()
     {
         var spec = new TypeListSpecification();
-        
+
         return Ok(await repo.ListAsync(spec));
     }
 

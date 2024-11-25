@@ -11,6 +11,11 @@ export class ShopService {
   private http = inject(HttpClient);
   
   getProducts() {
+    const headers = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept'
+    };
     return this.http.get<Pagination<Product>>(this.baseUrl + 'products?pageSize=20')
   }
 }

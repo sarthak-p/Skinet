@@ -15,8 +15,8 @@ import { MatIcon } from '@angular/material/icon';
     MatCard,
     MatButton,
     ProductItemComponent,
-    MatIcon
-],
+    MatIcon,
+  ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
 })
@@ -30,7 +30,7 @@ export class ShopComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.initializeShop(); 
+    this.initializeShop();
   }
 
   initializeShop() {
@@ -50,15 +50,19 @@ export class ShopComponent implements OnInit {
         selectedTypes: this.selectedTypes
       }
     });
-    dialogRef.afterClosed().subscribe(result => ({
+
+    dialogRef.afterClosed().subscribe({
       next: result => {
         if (result) {
-          console.log(result); 
           this.selectedBrands = result.selectedBrands;
           this.selectedTypes = result.selectedTypes;
-          // apply filters
+          this.shopService.getProducts(this.selectedBrands, this.selectedTypes).subscribe({
+            next: response => this.products = response.data,
+            error: error => console.log(error)
+          })
         }
       }
     })
   }
 }
+

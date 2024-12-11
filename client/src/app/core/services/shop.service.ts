@@ -12,7 +12,7 @@ export class ShopService {
   types: string[] = [];
   brands: string[] = [];
   
-  getProducts(brands?: string[], types?: string[]) {
+  getProducts(brands?: string[], types?: string[], sort?: string) {
     const headers = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
@@ -27,6 +27,10 @@ export class ShopService {
 
       if (types && types.length > 0) {
         params = params.append('types', types.join(','));
+      }
+    
+      if (sort) {
+        params = params.append('sort', sort);
       }
     
     params = params.append('pageSize', 20);

@@ -1,41 +1,39 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Product } from '../../shared/models/products';
 import { ShopService } from '../../core/services/shop.service';
-import { MatCard } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { ProductItemComponent } from "./product-item/product-item.component";
-import { MatDialog } from '@angular/material/dialog';
-import { MatButton } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { FiltersDialogComponent } from './filters-dialog/filters-dialog.component';
-import { MatIcon } from '@angular/material/icon';
-import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
-import { MatSelectionList, MatSelectionListChange } from '@angular/material/list';
-import { MatListOption } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
 import { ShopParams } from '../../shared/models/shopParams';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Pagination } from '../../shared/models/pagination';
 import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-shop',
   standalone: true,
   imports: [
-    MatCard,
-    MatButton,
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
     ProductItemComponent,
-    MatIcon,
-    MatMenu,
-    MatSelectionList,
-    MatListOption,
-    MatMenuTrigger,
-    MatPaginator,
+    MatIconModule,
+    MatMenuModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatDialogModule,
     FormsModule
   ],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
 })
 export class ShopComponent implements OnInit {
-
   private shopService = inject(ShopService);
   private dialogService = inject(MatDialog);
   products?: Pagination<Product>;
@@ -60,9 +58,9 @@ export class ShopComponent implements OnInit {
 
   getProducts() {
     this.shopService.getProducts(this.shopParams).subscribe({
-      next: response => this.products = response,
-      error: error => console.log(error),
-    })
+      next: (response: Pagination<Product>) => this.products = response,
+      error: (error: Error) => console.log(error),
+    });
   }
 
   onSearchChange() {
@@ -76,7 +74,7 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
-  onSortChange(event: MatSelectionListChange) {
+  onSortChange(event: any) {
     const selectedOption = event.options[0];
     if (selectedOption) {
       this.shopParams.sort = selectedOption.value;
@@ -103,6 +101,6 @@ export class ShopComponent implements OnInit {
           this.getProducts();
         }
       }
-    })
+    });
   }
 }

@@ -33,33 +33,34 @@
             </form>
             <div class="flex gap-3">
                 <button class="match-input-height" mat-raised-button (click)="openFilterDialog()">
-                <mat-icon>filter_list</mat-icon>
-                Filters
-            </button>
-            <button class="match-input-height" mat-raised-button [matMenuTriggerFor]="sortMenu">
-                <mat-icon>swap_vert</mat-icon>
-                Sort
-            </button>
+                    <mat-icon>filter_list</mat-icon>
+                    Filters
+                </button>
+                <button class="match-input-height" mat-raised-button [matMenuTriggerFor]="sortMenu">
+                    <mat-icon>swap_vert</mat-icon>
+                    Sort
+                </button>
             </div>
         </div>
 
         <div class="flex justify-center w-full p-8">
-        <div style="width: 1200px;">
-            <div class="grid grid-cols-5 gap-6">
-                @for (product of products.data; track product.id) {
-                    <app-product-item [product]="product"></app-product-item>
-                }
+            <div style="width: 1200px;">
+                <div class="grid grid-cols-5 gap-6">
+                    @for (product of products.data; track product.id) {
+                        <app-product-item [product]="product"></app-product-item>
+                    }
+                </div>
             </div>
         </div>
-    </div>
 
-    <mat-menu #sortMenu="matMenu">
-        <mat-selection-list [multiple]="false" (selectionChange)="onSortChange($event)">
-            @for (sort of sortOptions; track $index) {
-                <mat-list-option [value]="sort.value" [selected]="shopParams.sort === sort.value">
-                    {{ sort.name }}
-                </mat-list-option>
-            }
-        </mat-selection-list>
-    </mat-menu>
+        <mat-menu #sortMenu="matMenu">
+            <mat-selection-list [multiple]="false" (selectionChange)="onSortChange($event)">
+                @for (sort of sortOptions; track $index) {
+                    <mat-list-option [value]="sort.value" [selected]="shopParams.sort === sort.value">
+                        {{ sort.name }}
+                    </mat-list-option>
+                }
+            </mat-selection-list>
+        </mat-menu>
+    </div>
 }

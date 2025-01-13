@@ -16,5 +16,5 @@ services:
       - redis-data:/data
 
 volumes:
-  sql-data:
   redis-data:
+  sql-data:

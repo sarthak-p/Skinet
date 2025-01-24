@@ -3,6 +3,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Cart, CartItem } from '../../shared/models/cart';
 import { Product } from '../../shared/models/products';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,12 @@ export class CartService {
   cart = signal<Cart | null>(null);
 
   getCart(id: string) {
-    return this.http.get<Cart>(this.baseUrl + 'cart?id=' + id).subscribe({
-      next: cart => this.cart.set(cart),
-    })
+    return this.http.get<Cart>(this.baseUrl + 'cart?id=' + id).pipe(
+      map(cart => {
+        this.cart.set(cart);
+        return cart; 
+      })
+    )
   }
 
   setCart(cart: Cart) {
@@ -33,6 +37,7 @@ export class CartService {
     cart.items = this.addOrUpdateItem(cart.items, item, quantity);
     this.setCart(cart);
   }
+  
   addOrUpdateItem(items: CartItem[], item: CartItem, quantity: number): CartItem[] {
     const index = items.findIndex(x => x.productId === item.productId);
     if (index === -1) {

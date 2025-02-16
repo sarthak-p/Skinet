@@ -5,20 +5,19 @@ namespace API.DTOs;
 public class AddressDto
 {
     [Required]
-    public required string Line1 = string.Empty;
+    public required string Line1 { get; set; } = string.Empty;
 
-    [Required]
     public string? Line2 { get; set; }
 
     [Required]
-    public required string City = string.Empty;
+    public required string City { get; set; } = string.Empty;
 
     [Required]
-    public required string State = string.Empty;
+    public required string State { get; set; } = string.Empty;
 
     [Required]
-    public required string PostalCode = string.Empty;
+    public required string PostalCode { get; set; } = string.Empty;
 
     [Required]
-    public required string Country = string.Empty;
+    public required string Country { get; set; } = string.Empty;
 }

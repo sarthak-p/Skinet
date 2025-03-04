@@ -54,7 +54,6 @@
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Microsoft.SqlServer.Server.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Mono.TextTemplating.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.CodeDom.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Composition.AttributedModel.dll
@@ -63,14 +62,11 @@
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Composition.Runtime.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Composition.TypedParts.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Configuration.ConfigurationManager.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Drawing.Common.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Memory.Data.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Runtime.Caching.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Security.Permissions.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Text.Json.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Windows.Extensions.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.resources.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/es/Microsoft.CodeAnalysis.resources.dll
@@ -129,12 +125,7 @@
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/unix/lib/net6.0/System.Drawing.Common.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Drawing.Common.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Runtime.Caching.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Security.Cryptography.ProtectedData.dll
-/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/StackExchange.Redis.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -151,3 +142,5 @@
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
 /Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/sarthak-p/Desktop/Personal Projects/skinet/API/bin/Debug/net8.0/Stripe.net.dll
